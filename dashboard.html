@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HabitHero — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html, body { width: 100%; min-height: 100vh; }
+  </style>
+</head>
+<body>
+
+  <div class="page-dashboard">
+
+    <header class="dashboard-header">
+      <div class="dashboard-header__title">
+        <span class="dashboard-header__icon">⚔</span>
+        HABIT HERO
+      </div>
+    </header>
+
+    <p class="dashboard-subtitle">// MANAGE YOUR DAILY QUESTS</p>
+
+    <div id="skill-grid" class="skill-grid"></div>
+
+  </div>
+
+  <!-- Modal overlay (shared) -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div id="modal-box" class="modal-box"></div>
+  </div>
+
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

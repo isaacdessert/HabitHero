@@ -2,30 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HabitHero</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="popup.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html, body { width: 340px; min-height: 0; }
+  </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header class="header">
     <span class="header__icon">⚔</span>
     <span class="header__title">HABIT HERO</span>
+    <button id="manage-btn" class="header__manage" title="Open full dashboard">MANAGE ▶</button>
   </header>
 
-  <!-- Skill grid -->
   <main>
-    <div id="skill-grid" class="skill-grid"></div>
+    <div id="skill-list" class="skill-list"></div>
   </main>
-
-  <!-- Modal overlay -->
-  <div id="modal-overlay" class="modal-overlay hidden">
-    <div id="modal-box" class="modal-box"></div>
-  </div>
 
   <script type="module" src="js/popup.js"></script>
 </body>

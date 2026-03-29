@@ -17,16 +17,12 @@
   --font:         'Press Start 2P', monospace;
 }
 
-html { width: 400px; }
-
 body {
   background: var(--bg);
   color: var(--white);
   font-family: var(--font);
   font-size: 8px;
   line-height: 1.6;
-  width: 400px;
-  min-height: 480px;
   overflow-x: hidden;
   image-rendering: pixelated;
 }
@@ -54,7 +50,23 @@ body {
   color: var(--gold);
   letter-spacing: 2px;
   text-shadow: 2px 2px 0 #7a4400;
+  flex: 1;
 }
+
+.header__manage {
+  background: none;
+  border: 1px solid var(--border-dark);
+  color: var(--muted);
+  font-family: var(--font);
+  font-size: 5px;
+  padding: 4px 6px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: color 0.1s, border-color 0.1s;
+  white-space: nowrap;
+}
+
+.header__manage:hover { color: var(--gold); border-color: var(--border-light); }
 
 /* ── Skill grid ───────────────────────────────────────────────── */
 
@@ -420,3 +432,152 @@ main { padding: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border-dark); }
 ::-webkit-scrollbar-thumb:hover { background: var(--border-light); }
+
+/* ── Popup: compact skill rows ────────────────────────────────── */
+
+.skill-list { display: flex; flex-direction: column; gap: 0; }
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  grid-template-rows: auto 6px;
+  align-items: center;
+  column-gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #1a1a2e;
+  position: relative;
+  transition: background 0.1s;
+}
+
+.skill-row:last-child { border-bottom: none; }
+.skill-row--done { background: rgba(0, 200, 83, 0.04); }
+
+.skill-row__icon {
+  font-size: 20px;
+  text-align: center;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.skill-row__meta {
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.skill-row__name {
+  font-size: 7px;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+.skill-row__level {
+  font-size: 6px;
+  color: var(--gold);
+}
+
+.skill-row__streak {
+  font-size: 5px;
+  color: #ff9800;
+}
+
+.skill-row__btn {
+  grid-row: 1;
+  grid-column: 3;
+  background: var(--border-dark);
+  border: 2px solid var(--border-light);
+  box-shadow: inset 1px 1px 0 rgba(255,255,255,0.1);
+  color: var(--gold);
+  font-family: var(--font);
+  font-size: 5px;
+  padding: 5px 7px;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+  transition: background 0.1s, transform 0.05s;
+}
+
+.skill-row__btn:hover:not(:disabled) { background: #7a5200; transform: translateY(-1px); }
+.skill-row__btn:active:not(:disabled) { transform: translateY(1px); }
+
+.skill-row__btn--done {
+  background: var(--green-dim);
+  border-color: var(--green);
+  color: var(--green);
+  cursor: default;
+  box-shadow: 0 0 4px rgba(0,200,83,0.25);
+}
+
+.skill-row__bar-wrap {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  height: 4px;
+  background: #0a0a0f;
+  border: 1px solid var(--border-dark);
+  margin-top: 5px;
+}
+
+.skill-row__bar-fill {
+  height: 100%;
+  background: var(--green);
+  box-shadow: 0 0 3px var(--green);
+  transition: width 0.4s ease;
+}
+
+/* XP gain toast (inline, under the row) */
+@keyframes xp-pop {
+  0%   { opacity: 0; transform: translateY(4px); }
+  20%  { opacity: 1; transform: translateY(0); }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-6px); }
+}
+
+.xp-gain-toast {
+  position: absolute;
+  right: 12px;
+  top: 4px;
+  font-family: var(--font);
+  font-size: 6px;
+  color: var(--green);
+  pointer-events: none;
+  animation: xp-pop 1.4s ease forwards;
+  white-space: nowrap;
+}
+
+/* ── Dashboard full-page layout ───────────────────────────────── */
+
+.page-dashboard {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px 20px 40px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border-dark);
+  margin-bottom: 20px;
+}
+
+.dashboard-header__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 #7a4400;
+}
+
+.dashboard-header__icon { color: var(--gold); text-shadow: 0 0 8px var(--gold); }
+
+.dashboard-subtitle {
+  font-size: 6px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
