@@ -426,6 +426,32 @@ main { padding: 10px; }
 
 .btn--secondary:hover { background: #2a2a4e; color: var(--white); border-color: var(--white); }
 
+/* ── Suggest footer ───────────────────────────────────────────── */
+
+.popup-footer {
+  border-top: 1px solid #1a1a2e;
+  padding: 7px 12px;
+  text-align: center;
+}
+
+.dashboard-footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #1a1a2e;
+  text-align: center;
+}
+
+.suggest-link {
+  font-family: var(--font);
+  font-size: 5px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.1s;
+}
+
+.suggest-link:hover { color: var(--gold); }
+
 /* ── Scrollbar ────────────────────────────────────────────────── */
 
 ::-webkit-scrollbar { width: 4px; }
