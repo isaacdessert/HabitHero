@@ -1,22 +1,32 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Popup</title>
-  <style>
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HabitHero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="popup.css" />
 </head>
-
 <body>
-  <input type="text" id="inputValue" placeholder="Enter value" />
-  <button id="setData">Set Data</button>
-  <button id="getData">Get Data</button>
-  <p id="output">heloo</p>
-  <button id="openPage">Open Local Page</button>
-  <script src="dataStorage.js"></script>
-  <script src="popup.js"></script>
+
+  <!-- Header -->
+  <header class="header">
+    <span class="header__icon">⚔</span>
+    <span class="header__title">HABIT HERO</span>
+  </header>
+
+  <!-- Skill grid -->
+  <main>
+    <div id="skill-grid" class="skill-grid"></div>
+  </main>
+
+  <!-- Modal overlay -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div id="modal-box" class="modal-box"></div>
+  </div>
+
+  <script type="module" src="js/popup.js"></script>
 </body>
 </html>

@@ -1,11 +1,22 @@
 {
-    "manifest_version": 3,
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": "hello_extensions.png"
-    },
-    "permissions": ["activeTab", "storage"]
+  "manifest_version": 3,
+  "name": "HabitHero",
+  "version": "1.0.0",
+  "description": "Level up your daily habits. RuneScape-style skill grid for real life.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16":  "icons/icon-16.png",
+      "32":  "icons/icon-32.png",
+      "48":  "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16":  "icons/icon-16.png",
+    "32":  "icons/icon-32.png",
+    "48":  "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["storage"]
 }
